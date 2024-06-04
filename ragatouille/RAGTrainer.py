@@ -233,6 +233,7 @@ class RAGTrainer:
             if warmup_steps == "auto"
             else warmup_steps,
             save_every=int(total_triplets // batch_size // 10),
+            root = "/kaggle/working/checkpoints/"
         )
 
         return self.model.train(data_dir=self.data_dir, training_config=training_config)
